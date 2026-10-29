@@ -1,0 +1,6 @@
+# Legacy Portfolio Planner website
+User-agent: *
+Allow: /
+Disallow: /404.html
+
+Sitemap: https://legacyportfolioplanner.com/sitemap.xml
