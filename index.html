@@ -297,7 +297,15 @@
             if(d&&d.success){f.hidden=true;show('Thank you! Please check your inbox (and spam folder) and tap the button to confirm your email. Your checklist arrives as soon as you confirm.');}
             else{var msg=(d&&d.errors&&d.errors.fields&&d.errors.fields.email&&d.errors.fields.email[0])||'Something went wrong. Please try again.';show(msg,true);}
           })
-          .catch(function(){show('We could not reach our email service. Please try again in a moment, or email support@legacyportfolioplanner.com and we will send it to you.',true);})
+          .catch(function(){
+             /* Some browsers/networks block cross-site fetch: fall back to a normal form post in a hidden frame */
+             var fr=document.getElementById('ml-frame');
+             if(!fr){fr=document.createElement('iframe');fr.name='ml-frame';fr.id='ml-frame';fr.title='sign-up';fr.style.display='none';document.body.appendChild(fr);}
+             f.target='ml-frame';
+             HTMLFormElement.prototype.submit.call(f);
+             f.hidden=true;
+             show('Thank you! Please check your inbox (and spam folder) in the next few minutes and tap the button to confirm your email. If nothing arrives, email support@legacyportfolioplanner.com and we will send the checklist to you.');
+           })
           .then(function(){b.disabled=false;b.textContent='Send me the checklist';});
       });
     })();
