@@ -353,3 +353,9 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy-2);
 .center{text-align:center}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.site-header,.menu-btn,.btn{display:none!important}body{background:#fff}}
+
+.checklist-form{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;max-width:520px;margin:0 auto;width:100%}
+.checklist-form input[type=email]{flex:1 1 240px;min-width:0}
+.checklist-form .btn{flex:0 0 auto}
+.checklist-form .btn[disabled]{opacity:.7;cursor:wait}
+#checklist-msg{max-width:520px;margin:0 auto;text-align:left}
