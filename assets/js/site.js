@@ -106,6 +106,18 @@
     });
   }
 
+  // WhatsApp click-to-chat button (WhatsApp Business, Mon-Sat 8 AM-8 PM)
+  if (!document.querySelector(".wa-float")) {
+    var wa = document.createElement("a");
+    wa.className = "wa-float";
+    wa.href = "https://wa.me/2348064169798?text=" + encodeURIComponent("Hi, I saw Legacy Portfolio Planner on your website and I'd like the free demo.");
+    wa.target = "_blank";
+    wa.rel = "noopener";
+    wa.setAttribute("aria-label", "Chat with us on WhatsApp (Mon to Sat, 8 AM to 8 PM)");
+    wa.innerHTML = '<svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.1 19.7L3 29l6.5-1.8A13 13 0 1 0 16 3zm0 23.6c-2 0-3.9-.5-5.6-1.5l-.4-.2-3.9 1 1-3.8-.2-.4A10.6 10.6 0 1 1 16 26.6zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.6.7.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.1-.3-.2-.6-.4z"/></svg><span>Chat on WhatsApp</span>';
+    document.body.appendChild(wa);
+  }
+
   // Footer year
   var y = document.getElementById("year");
   if (y) y.textContent = String(new Date().getFullYear());

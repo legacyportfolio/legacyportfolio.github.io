@@ -359,3 +359,12 @@ input:focus,select:focus,textarea:focus{outline:none;border-color:var(--navy-2);
 .checklist-form .btn{flex:0 0 auto}
 .checklist-form .btn[disabled]{opacity:.7;cursor:wait}
 #checklist-msg{max-width:520px;margin:0 auto;text-align:left}
+
+/* WhatsApp click-to-chat */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:50;display:inline-flex;align-items:center;gap:8px;
+  padding:10px 16px;border-radius:999px;background:#1F7A4D;color:#fff;font-weight:600;font-size:15px;
+  text-decoration:none;box-shadow:0 4px 14px rgba(10,35,66,.25);}
+.wa-float:hover{background:#18633E;color:#fff}
+.wa-float:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+@media (max-width:480px){.wa-float span{display:none}.wa-float{padding:12px}}
+@media print{.wa-float{display:none}}
